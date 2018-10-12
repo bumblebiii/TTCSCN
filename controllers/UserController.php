@@ -9,6 +9,10 @@
 			if (isset($_SESSION['cart'])) {
 	        	$cart = $_SESSION['cart'];
 	        }
+
+	        $product_model = new Product();
+
+	        $data = $product_model->All();
 			require_once("views/user/pages/index.php");
 		}
 		function cart(){
@@ -36,6 +40,9 @@
 			require_once("views/user/pages/contact.php");
 		}
 		function product(){
+			if (isset($_SESSION['cart'])) {
+	        	$cart = $_SESSION['cart'];
+	        }
 			$product_model = new Product();
 
 			if(isset($_GET['LSP']) && isset($_GET['NSX'])){
@@ -47,7 +54,7 @@
 				
 				$total_sp = count($data1);
 
-				require_once("views/user/pages/product.php");
+				// require_once("views/user/pages/product.php");
 				
 
 			}elseif (isset($_GET['NSX'])) {
@@ -57,7 +64,7 @@
 
 				$total_sp = count($data1);
 
-				require_once("views/user/pages/product.php");
+				// require_once("views/user/pages/product.php");
 
 			}elseif (isset($_GET['LSP'])) {
 				$MA_LOAI_SP = $_GET['LSP'];
@@ -82,7 +89,7 @@
 
 		        $data1 = $product_model->pagination1_product($MA_LOAI_SP,$start1,$limit1);
 
-		        require_once("views/user/pages/product.php");
+		        // require_once("views/user/pages/product.php");
 			}else{
 				$data = $product_model->All();
 
@@ -104,18 +111,19 @@
 
 		        $data1 = $product_model->pagination_product($start,$limit);
 
-		        require_once("views/user/pages/product.php");
+		        
 			}
 
+			$data2 = $product_model->All();
 
-	        if (isset($_SESSION['cart'])) {
-	        	$cart = $_SESSION['cart'];
-	        }
+			$json = json_encode($data2);
 
+			// return response()->json($json);
 	        // $rate_product = $product_model->rate_product();
 
-			
+			require_once("views/user/pages/product.php");
 		}
+
 		function productdetail(){
 			if (isset($_SESSION['cart'])) {
 	        	$cart = $_SESSION['cart'];

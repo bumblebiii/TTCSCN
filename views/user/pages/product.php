@@ -62,15 +62,6 @@
 								</a>
 							</li>
 						</ul>
-
-						
-						<div class="search-product pos-relative bo4 of-hidden">
-							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
-
-							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
-								<i class="fs-12 fa fa-search" aria-hidden="true"></i>
-							</button>
-						</div>
 					</div>
 				</div>
 
@@ -102,13 +93,12 @@
 
 										<div class="block2-btn-addcart w-size1 trans-0-4" style="color: white">
 											<ul>
-												<li><b><h5>THÔNG TIN SẢN PHẨM</h5></b></li>
-												<li>Bộ nhớ: <?=$value['BO_NHO_TRONG']?> </li>
-												<li>RAM: </li>
-												<li>RAM: </li>
-												<li>RAM: </li>
-												<li><a href="" style="color: red">Xem chi tiết</a></li>
-											</ul>
+											<li><b><h5>THÔNG TIN SẢN PHẨM</h5></b></li>
+											<li>Bộ nhớ: <?=$value['BO_NHO_TRONG']?> </li>
+											<li>RAM: <?=$value['RAM']?></li>
+											<li>Camera: <?=$value['CAMERA']?></li>
+											<li><a href="?mod=index&act=productdetail&MA_SP=<?=$value['MA_SP']?>" style="color: red">Xem chi tiết</a></li>
+										</ul>
 											<!-- Button -->
 											<a href="?mod=index&act=add2cart&MA_SP=<?=$value['MA_SP']?>" class="btn-addcart flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 addcart">
 												Add to Cart

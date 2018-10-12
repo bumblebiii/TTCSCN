@@ -86,19 +86,19 @@
 					<center><h3>THÔNG TIN SẢN PHẨM</h3></center>
 					<table class="table table-bordered">
 						<tr>
-							<td><b>RAM</b></td>
-							<td>abc</td>
+							<td><b>Bộ nhớ trong</b></td>
+							<td><?=$data['BO_NHO_TRONG']?></td>
 						</tr>
 						<tr>
 							<td><b>RAM</b></td>
-							<td>abc</td>
+							<td><?=$data['RAM']?></td>
 						</tr>
 						<tr>
-							<td><b>RAM</b></td>
-							<td>abc</td>
+							<td><b>Camera</b></td>
+							<td><?=$data['CAMERA']?></td>
 						</tr>
 					</table>
-					<button class="btn btn-info">Xem chi tiết</button>
+					<button class="btn btn-info" data-toggle="modal" data-target="#detail">Xem chi tiết</button>
 				</p>
 
 				<!--  -->
@@ -149,7 +149,14 @@
 										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
 									</a>
 
-									<div class="block2-btn-addcart w-size1 trans-0-4">
+									<div class="block2-btn-addcart w-size1 trans-0-4" style="color: white">
+										<ul>
+											<li><b><h5>THÔNG TIN SẢN PHẨM</h5></b></li>
+											<li>Bộ nhớ: <?=$rate_value['BO_NHO_TRONG']?> </li>
+											<li>RAM: <?=$rate_value['RAM']?></li>
+											<li>Camera: <?=$rate_value['CAMERA']?></li>
+											<li><a href="?mod=index&act=productdetail&MA_SP=<?=$rate_value['MA_SP']?>" style="color: red">Xem chi tiết</a></li>
+										</ul>
 										<!-- Button -->
 										<a href="?mod=index&act=add2cart&MA_SP=<?=$rate_value['MA_SP']?>" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
 											Add to Cart
@@ -177,6 +184,176 @@
 
 		</div>
 	</section>
+	<div class="modal fade" id="detail">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Thông tin sản phẩm</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					
+				</div>
+				<div class="modal-body">
+					<div class="modal-body">
+                    
+                    <ul class="fs-dttsktul" style="max-width : 100%;">
+                        
+                        
+                                    <li class="fs-dttskt-tit">Màn hình</li>
+                                        <li>
+                                            <label data-id="10">Màu màn hình :</label>
+											<span>16 Triệu màu</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="534">Chuẩn màn hình :</label>
+											<span>Super Retina HD</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="12">Độ phân giải:</label>
+											<span>2436 x 1125 pixel</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="13">Công nghệ cảm ứng :</label>
+											<span>	3D Touch</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="1246">Mặt kính màn hình :</label>
+											<span>Kính cường lực</span>
+                                        </li>
+                                    <li class="fs-dttskt-tit">Camera Trước</li>
+                                        <li>
+                                            <label data-id="1333">Video Call :</label>
+											<span>Có</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="1332">Độ phân giải :</label>
+											<span>7.0 MP</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="1334">Thông tin khác :</label>
+											<span>ƒ/2.2, Auto HDR</span>
+                                        </li>
+                                    <li class="fs-dttskt-tit">Camera Sau</li>
+                                        <li>
+                                            <label data-id="1328">Độ phân giải :</label>
+											<span>Dual 12.0 MP</span>
+                                        </li>
+                                    <li class="fs-dttskt-tit">Cấu hình phần cứng</li>
+                                        <li>
+                                            <label data-id="650">Số nhân :</label>
+											<span>6</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="651">Chipset :</label>
+											<span>Apple A11 Bionic</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="652">RAM :</label>
+											<span>	3 GB</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="653">Chip đồ họa (GPU) :</label>
+											<span>Apple GPU (three-core graphics)</span>
+                                        </li>
+                                    <li class="fs-dttskt-tit">Bộ nhớ &amp; Lưu trữ</li>
+                                        <li>
+                                            <label data-id="23">Danh bạ lưu trữ :</label>
+											<span>Không giới hạn</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="24">ROM :</label>
+											<span>64 GB</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="25">Thẻ nhớ ngoài :</label>
+											<span>Không</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="151">Hỗ trợ thẻ nhớ tối đa :</label>
+											<span>Không</span>
+                                        </li>
+                                    <li class="fs-dttskt-tit">Thiết kế &amp; Trọng lượng</li>
+                                        <li>
+                                            <label data-id="748">Kiểu dáng :</label>
+											<span>Thanh (thẳng) + Cảm ứng </span>
+                                        </li>
+                                        <li>
+                                            <label data-id="1247">Chất liệu :</label>
+											<span>Khung kim loại + mặt kính cường lực</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="749">Kích thước :</label>
+											<span>143.6 x 70.9 x 7.7 mm</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="212">Trọng lượng  :</label>
+											<span>174 g</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="1248">Khả năng chống nước :</label>
+											<span>Chuẩn IP67</span>
+                                        </li>
+                                    <li class="fs-dttskt-tit">Thông tin pin</li>
+                                        <li>
+                                            <label data-id="194">Loại pin :</label>
+											<span>	Li-Ion</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="36">Dung lượng pin :</label>
+											<span>2716 mAh</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="750">Pin có thể tháo rời :</label>
+											<span>Không</span>
+                                        </li>
+                                    <li class="fs-dttskt-tit">Kết nối &amp; Cổng giao tiếp</li>
+                                        
+                                        <li>
+                                            <label data-id="33">Kết nối USB :</label>
+											<span>Lightning</span>
+                                        </li>
+                                    
+                                        <li>
+                                            <label data-id="752">Băng tần 4G :</label>
+											<span>Có</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="156">Loại SIM :</label>
+											<span>	Nano Sim</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="753">Khe cắm sim :</label>
+											<span>1 Sim</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="28">Wifi :</label>
+											<span>802.11ac Wi‑Fi with MIMO</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="31">GPS :</label>
+											<span>Có</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="30">Bluetooth :</label>
+											<span> v5.0</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="755">Cổng sạc :</label>
+											<span>Lightning</span>
+                                        </li>
+                                        <li>
+                                            <label data-id="35">Jack (Input &amp; Output) :</label>
+											<span>Lightning</span>
+                                        </li>
+                                    
+                    </ul>
+                </div>
+				</div>
+				<div class="modal-footer">
+
+				</div>
+			</div>
+		</div>
+	</div>
 <?php
 	include_once 'views/user/layout/footer.php';
  ?>

@@ -33,6 +33,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="public/user/vendor/Carousel/owl.carousel.min.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="public/user/css/util.css">
 	<link rel="stylesheet" type="text/css" href="public/user/css/main.css">
 <!--===============================================================================================-->
@@ -74,6 +75,7 @@
 				<!-- Logo -->
 				<a href="?" class="logo">
 					<img src="public/user/images/icons/logo.png" alt="IMG-LOGO">
+					<p style="color: red">Luôn đi đầu về chất lượng</p>
 				</a>
 
 				<!-- Menu -->
@@ -101,11 +103,6 @@
 									<li><a href="?mod=index&act=product&LSP=2&NSX=2">Samsung Galaxy Tab</a></li>
 								</ul>
 							</li>
-
-							<li>
-								<a href="?mod=index&act=blog">Tin tức</a>
-							</li>
-
 							<li>
 								<a href="?mod=index&act=about">Giới thiệu</a>
 							</li>
@@ -127,7 +124,7 @@
 
 					<div class="header-wrapicon2">
 						<img src="public/user/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti"><?php $v =(!empty($cart))? count($cart) : 0; echo $v;?></span>
+						<span class="header-icons-noti"><?php echo (!empty($cart))? count($cart) : 0;?></span>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
@@ -178,19 +175,6 @@
 										View Cart
 									</a>
 								</div>
-
-								<?php 
-									if (!empty($cart)) {
-								?>
-									<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<button data-toggle="modal" data-target="#checkout"  class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</button>
-								</div>
-								<?php
-									}
-								 ?>
 							</div>
 						</div>
 					</div>

@@ -89,11 +89,33 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 	box-sizing: border-box;
 }
 
+.fs-dttsktul li {
+    display: table;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.fs-dttskt-tit {
+    font-weight: bold;
+    color: #d0021b;
+}
+
+.fs-dttsktul li label {
+    width: 380px;
+}
+.fs-dttsktul li label, .fs-dttsktul li span {
+    display: table-cell;
+    vertical-align: middle;
+    word-break: break-all;
+    line-height: 18px;
+}
+
 body, html {
 	height: 100%;
 	font-family: Montserrat-Regular, sans-serif;
   font-weight: 400;
-  background-color: lightgrey !important;
+  /*background-color: lightgrey !important;*/
 }
 
 /* ------------------------------------ */
