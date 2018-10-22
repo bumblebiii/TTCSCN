@@ -34,7 +34,7 @@
  						<td>
  							<a href="?mod=product&act=edit&MA_SP=<?=$value['MA_SP']?>" class="btn btn-secondary">Edit</a>
  							<a href="?mod=product&act=detail&MA_SP=<?=$value['MA_SP']?>" class="btn btn-primary">Detail</a>
- 							<a href="?mod=product&act=delete&MA_SP=<?=$value['MA_SP']?>" class="btn btn-danger">Delete</a>
+ 							<a href="?mod=product&act=delete&MA_SP=<?=$value['MA_SP']?>" class="btn btn-danger delete">Delete</a>
  						</td>
  					</tr>
  				<?php

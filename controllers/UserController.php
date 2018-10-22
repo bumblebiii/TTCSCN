@@ -220,7 +220,7 @@
 				
 				$hoadon['STATUS'] = 0;
 
-				$hoadon['NGAY_BAN'] = date('Y-m-d H-i-s');
+				$hoadon['NGAY_BAN'] = date('Y-m-d H:i:s');
 
 				$bill_model = new Bill();
 
@@ -238,7 +238,7 @@
 					$prod['SO_LUONG'] = $product['SO_LUONG'];
 					$prod['MA_SP'] = $product['MA_SP'];
 					$prod['GIA_BAN'] = $product['GIA_BAN'];
-					$prod['THANH_TIEN'] = $product['SO_LUONG']*$product['GIA_BAN'];
+					$prod['THANH_TIEN'] = $product['SO_LUONG']*$product['GIA_BAN'] - ($product['SO_LUONG']*$product['GIA_BAN']*$product['khuyen_mai'])/100;
 					$tongtien += $prod['THANH_TIEN'];
 
 					$billdetail_model = new BillDetail();

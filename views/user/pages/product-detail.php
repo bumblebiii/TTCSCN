@@ -74,9 +74,25 @@
 					<b><?=$data['TEN_SP']?></b>
 				</h4>
 
-				<span class="m-text17">
-					<?=number_format($data['GIA_BAN'])?> VNĐ
-				</span>
+				<?php 
+				if ($data['khuyen_mai']!=0) {
+					?>
+					<span class="m-text17" style="color: red; font-weight: bold;">
+						<?php 
+						$gia= ($data['GIA_BAN'] *(100 - $data['khuyen_mai']))/100;
+						echo number_format($gia);
+						?> VNĐ
+					</span>
+					<span class="m-text17" style="text-decoration:  line-through;"><?=number_format($data['GIA_BAN'])?> VNĐ</span>
+					<?php
+				}else{
+					?>
+					<span class="block2-price m-text6 p-r-5" style="color: red; font-weight: bold;">
+						<?=number_format($data['GIA_BAN'])?> VNĐ
+					</span>
+					<?php
+				}
+				?>
 
 				<p class="s-text8 p-t-10">
 					Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
@@ -126,7 +142,7 @@
 		<div class="container">
 			<div class="sec-title p-b-60">
 				<h3 class="m-text5 t-center">
-					Related Products
+					Sản phẩm tương tự
 				</h3>
 			</div>
 
@@ -140,7 +156,7 @@
 						<div class="item-slick2 p-l-15 p-r-15">
 						<!-- Block2 -->
 						<div class="block2">
-							<div class="block2-img wrap-pic-w of-hidden pos-relative">
+							<div class="block2-img wrap-pic-w of-hidden pos-relative <?= ($rate_value['khuyen_mai']!=0)? 'block2-labelsale': '';?>">
 								<img src="public/user/images/uploads/<?=$rate_value['ANH2']?>" alt="IMG-PRODUCT">
 
 								<div class="block2-overlay trans-0-4">
@@ -170,9 +186,25 @@
 									<?=$rate_value['TEN_SP']?>
 								</a>
 
-								<span class="block2-price m-text6 p-r-5">
-									<?=number_format($rate_value['GIA_BAN'])?>
-								</span>
+								<?php 
+										if ($rate_value['khuyen_mai']!=0) {
+									?>
+										<span class="block2-price m-text6 p-r-5" style="color: red; font-weight: bold;">
+											<?php 
+												$gia= ($rate_value['GIA_BAN'] *(100 - $rate_value['khuyen_mai']))/100;
+											    echo number_format($gia);
+											    ?> VNĐ
+										</span>
+										<span class="price-cost"><?=number_format($rate_value['GIA_BAN'])?> VNĐ</span>
+									<?php
+										}else{
+									?>
+										<span class="block2-price m-text6 p-r-5" style="color: red; font-weight: bold;">
+											<?=number_format($rate_value['GIA_BAN'])?> VNĐ
+										</span>
+									<?php
+										}
+									 ?>
 							</div>
 						</div>
 					</div>

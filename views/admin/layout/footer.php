@@ -63,7 +63,7 @@
     <script src="public/admin/js/sb-admin.js"></script>
     <script type="text/javascript" src="public/user/vendor/sweetalert/sweetalert.min.js"></script>
     <script type="text/javascript">
-        $('.btn-danger').click(function(e){
+        $('.delete').click(function(e){
           e.preventDefault();
           var url = $(this).attr('href');
           // alert(url);

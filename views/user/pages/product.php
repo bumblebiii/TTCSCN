@@ -22,13 +22,13 @@
 					<div class="leftbar p-r-20 p-r-0-sm">
 						<!--  -->
 						<h4 class="m-text14 p-b-7">
-							Categories
+							Danh mục sản phẩm
 						</h4>
 
 						<ul class="p-b-54">
 							<li class="p-t-4">
 								<a href="?mod=index&act=product" class="s-text13 active1">
-									All
+									Tất cả
 								</a>
 							</li>
 
