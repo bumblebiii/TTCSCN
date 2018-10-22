@@ -7,10 +7,10 @@
 			Trang chủ
 			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
 		</a>
-
-		<span class="s-text17">
+		<a href="?" class="s-text16">
 			Sản phẩm
-		</span>
+			<i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
+		</a>
 	</div>
 
 
@@ -82,23 +82,19 @@
 							<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 							<!-- Block2 -->
 							<div class="block2">
-								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative <?= ($value['khuyen_mai']!=0)? 'block2-labelsale': '';?>">
 									<img src="public/user/images/uploads/<?=$value['ANH2']?>" alt="IMG-PRODUCT">
 
 									<div class="block2-overlay trans-0-4">
-										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-											<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-											<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-										</a>
 
 										<div class="block2-btn-addcart w-size1 trans-0-4" style="color: white">
 											<ul>
-											<li><b><h5>THÔNG TIN SẢN PHẨM</h5></b></li>
-											<li>Bộ nhớ: <?=$value['BO_NHO_TRONG']?> </li>
-											<li>RAM: <?=$value['RAM']?></li>
-											<li>Camera: <?=$value['CAMERA']?></li>
-											<li><a href="?mod=index&act=productdetail&MA_SP=<?=$value['MA_SP']?>" style="color: red">Xem chi tiết</a></li>
-										</ul>
+												<li><b><h5>THÔNG TIN SẢN PHẨM</h5></b></li>
+												<li>Bộ nhớ: <?=$value['BO_NHO_TRONG']?> </li>
+												<li>RAM: <?=$value['RAM']?></li>
+												<li>Camera: <?=$value['CAMERA']?></li>
+												<li><a href="?mod=index&act=productdetail&MA_SP=<?=$value['MA_SP']?>" style="color: red">Xem chi tiết</a></li>
+											</ul>
 											<!-- Button -->
 											<a href="?mod=index&act=add2cart&MA_SP=<?=$value['MA_SP']?>" class="btn-addcart flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 addcart">
 												Add to Cart
@@ -112,9 +108,25 @@
 										<b><?=$value['TEN_SP']?></b>
 									</a>
 
-									<span class="block2-price m-text6 p-r-5">
-										<?=number_format($value['GIA_BAN'])?> VNĐ
-									</span>
+									<?php 
+										if ($value['khuyen_mai']!=0) {
+									?>
+										<span class="block2-price m-text6 p-r-5" style="color: red; font-weight: bold;">
+											<?php 
+												$gia= ($value['GIA_BAN'] *(100 - $value['khuyen_mai']))/100;
+											    echo number_format($gia);
+											    ?> VNĐ
+										</span>
+										<span class="price-cost"><?=number_format($value['GIA_BAN'])?> VNĐ</span>
+									<?php
+										}else{
+									?>
+										<span class="block2-price m-text6 p-r-5" style="color: red; font-weight: bold;">
+											<?=number_format($value['GIA_BAN'])?> VNĐ
+										</span>
+									<?php
+										}
+									 ?>
 								</div>
 							</div>
 						</div>

@@ -34,6 +34,8 @@
 	<link rel="stylesheet" type="text/css" href="public/user/vendor/Carousel/owl.carousel.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 	<link rel="stylesheet" type="text/css" href="public/user/css/util.css">
 	<link rel="stylesheet" type="text/css" href="public/user/css/main.css">
 <!--===============================================================================================-->
@@ -133,7 +135,7 @@
 									if (!empty($cart)) {
 										$tong =0;
 										foreach ($cart as $valuecart) {
-											$tong += $valuecart['SO_LUONG']*$valuecart['GIA_BAN'];
+											$tong += $valuecart['SO_LUONG']*$valuecart['GIA_BAN'] - ($valuecart['SO_LUONG']*$valuecart['GIA_BAN']*$valuecart['khuyen_mai'])/100;
 								?>
 									<li class="header-cart-item">
 										<div class="header-cart-item-img">

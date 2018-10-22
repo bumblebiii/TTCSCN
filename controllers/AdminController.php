@@ -23,13 +23,20 @@
 
 			$data5 = $product_model->inventory_products();
 
-			if (isset($_POST['NGAY_BAN'])) {
-				$date = $_POST['NGAY_BAN'];
+			if (isset($_POST['NGAY_BAN']) && isset($_POST['NAM_BAN'])) {
+				$month = $_POST['NGAY_BAN'];
+				$year = $_POST['NAM_BAN'];
+			}elseif (isset($_POST['NAM_BAN'])) {
+				$month = date('m');
+				$year = $_POST['NAM_BAN'];
+			}elseif (isset($_POST['NGAY_BAN'])) {
+				$month = $_POST['NGAY_BAN'];
+				$year = date('Y');
 			}else{
-				$date = date('Y-m-d');
+				$month = date('m');
+				$year= date('Y');
 			}
-
-			$data6 = $bill_model->statistical($date);
+			$data6 = $bill_model->statistical($month,$year);
 
 			require_once 'views/admin/pages/index.php';
 		}

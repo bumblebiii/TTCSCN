@@ -31,7 +31,7 @@
  						<td><?=$value['MA_KH']?></td>
  						<td><?=$value['MA_NV']?></td>
  						<td><?=$value['NGAY_BAN']?></td>
- 						<td><?=$value['TONG_TIEN']?></td>
+ 						<td><?=number_format($value['TONG_TIEN'])?></td>
  						<td>
  							<?php 
 								if ($value['STATUS']==1) {

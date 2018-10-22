@@ -5,8 +5,8 @@
 		var $table_name = 'tbl_bill';
 		var $primary_key = 'MA_HD';
 
-		function statistical($date){
-			$query = "SELECT * FROM tbl_bill WHERE DATE(NGAY_BAN)='".$date."'";
+		function statistical($month,$year){
+			$query = "SELECT * FROM tbl_bill WHERE MONTH(NGAY_BAN)='".$month."' AND YEAR(NGAY_BAN)='".$year."'";
 
 			$result = $this->conn->query($query);
 

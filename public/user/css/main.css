@@ -1661,7 +1661,7 @@ li.sale-noti > a {
 /*[ Block2 ]
 ///////////////////////////////////////////////////////////
 */
-.block2-labelsale::before,
+
 .block2-labelnew::before 
 {
   z-index: 100;
@@ -1681,6 +1681,25 @@ li.sale-noti > a {
   position: absolute;
   top: 12px;
   left: 12px;
+}
+.block2-labelsale::before{
+  z-index: 100;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 22px;
+  border-radius: 11px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
 
 .block2-labelsale::before {
@@ -2372,6 +2391,12 @@ input.num-product::-webkit-outer-spin-button,
 input.num-product::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; 
+}
+
+.price-cost{
+  font-weight: bold;
+  color: lightgrey;
+  text-decoration: line-through;
 }
 
 

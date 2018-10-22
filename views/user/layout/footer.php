@@ -1,6 +1,6 @@
 	<!-- Footer -->
-	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
-		<div class="flex-w p-b-90">
+	<footer class="bg6 p-b-43 p-l-45 p-r-45">
+		<div class="flex-w">
 			<div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">
 					GET IN TOUCH
@@ -57,70 +57,7 @@
 					</li>
 				</ul>
 			</div>
-
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-				<h4 class="s-text12 p-b-30">
-					Links
-				</h4>
-
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Search
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							About Us
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Contact Us
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-				<h4 class="s-text12 p-b-30">
-					Help
-				</h4>
-
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Track Order
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Shipping
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							FAQs
-						</a>
-					</li>
-				</ul>
-			</div>
+			
 
 			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">
@@ -142,6 +79,10 @@
 
 				</form>
 			</div>
+			<div class="w-size8 p-t-30 respon3">
+				<div class="fb-page" data-href="https://www.facebook.com/Fashe-Shop-250165732354999/?modaltimeline=admin_todo_tour" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Fashe-Shop-250165732354999/?modaltimeline=admin_todo_tour" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Fashe-Shop-250165732354999/?modaltimeline=admin_todo_tour">Fashe Shop</a></blockquote></div>
+			</div>
+			
 		</div>
 
 		<div class="t-center p-l-15 p-r-15">
@@ -276,6 +217,31 @@
 			});
 		});
 	</script>
+	<script type="text/javascript">
+        $('.btn-danger').click(function(e){
+          e.preventDefault();
+          var url = $(this).attr('href');
+          // alert(url);
+          swal({
+            title: "Bạn có chắc chắn muốn xóa không?",
+            text: "",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              window.location.href = url;
+              swal("Xóa thành công !!", {
+                icon: "success",
+              });
+            } else {
+              swal("Cảm ơn !!");
+            }
+        });
+      });
+
+      </script>
 	<!--===============================================================================================-->
 	<!-- <script type="text/javascript" src="public/user/vendor/noui/nouislider.min.js"></script>
 	<script type="text/javascript">
@@ -306,6 +272,10 @@
 <!--===============================================================================================-->
 	<script src="public/user/js/main.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	<?php 
+		include 'views/user/layout/toastr.php';
+	?>
 	
 </body>
 </html>

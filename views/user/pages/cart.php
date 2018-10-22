@@ -33,7 +33,7 @@
 							if (!empty($cart)) {
 								$tongtien=0;
 								foreach ($cart as $valuecart) {
-									$tongtien += $valuecart['SO_LUONG']*$valuecart['GIA_BAN'];
+									$tongtien += $valuecart['SO_LUONG']*$valuecart['GIA_BAN'] - ($valuecart['SO_LUONG']*$valuecart['GIA_BAN']*$valuecart['khuyen_mai'])/100;
 							
 						?>
 							<tr class="table-row">
@@ -58,7 +58,7 @@
 									</a>
 								</div>
 							</td>
-							<td class="column-5"><?=number_format($valuecart['SO_LUONG']*$valuecart['GIA_BAN'])?></td>
+								<td class="column-5"><?=number_format($valuecart['SO_LUONG']*$valuecart['GIA_BAN'] - ($valuecart['SO_LUONG']*$valuecart['GIA_BAN']*$valuecart['khuyen_mai'])/100)?></td>
 
 							<td class="column-6">
 								<a href="?mod=index&act=deleteproduct&MA_SP=<?=$valuecart['MA_SP']?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>

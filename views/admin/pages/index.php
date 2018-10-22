@@ -84,10 +84,30 @@
                 <div class="col-sm-12">
                   <form action="?mod=admin&act=index" method="POST">
                     <div class="form-group">
-                      <label>Chọn ngày: </label>
-                      <input type="text" name="NGAY_BAN" id="datepicker">
-                      <input type="submit" name="submit" value="Thống kê">
+                      <label>Chọn tháng: </label>
+                      <select name="NGAY_BAN">
+                        <option value="1">Tháng 1</option>
+                        <option value="2">Tháng 2</option>
+                        <option value="3">Tháng 3</option>
+                        <option value="4">Tháng 4</option>
+                        <option value="5">Tháng 5</option>
+                        <option value="6">Tháng 6</option>
+                        <option value="7">Tháng 7</option>
+                        <option value="8">Tháng 8</option>
+                        <option value="9">Tháng 9</option>
+                        <option value="10">Tháng 10</option>
+                        <option value="11">Tháng 11</option>
+                        <option value="12">Tháng 12</option>
+                      </select>
+                      &ensp;&ensp; &ensp; &ensp;
+                      <label>Chọn năm: </label>
+                      <select name="NAM_BAN">
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                      </select>
                     </div>
+                    <input type="submit" value="Thống kê" name="">
                   </form>
                   <div class="row">
                     <div class="col-sm-12">
@@ -120,7 +140,7 @@
                               }
                             ?>
                               <tr>
-                                <td colspan="5"><b>TỔNG DOANH THU NGÀY <?= (isset($valu6['NGAY_BAN']))? date($valu6['NGAY_BAN']): "";?></b></td>
+                                <td colspan="5"><b>TỔNG DOANH THU </b></td>
                                 <td ><b><?= (isset($TONG))? number_format($TONG) : 0;?></b></td>
                               </tr>
                           </tbody>

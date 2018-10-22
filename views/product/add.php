@@ -25,10 +25,10 @@
                 <label for="">Số lượng</label>
                 <input type="number" class="form-control" id="" placeholder="Nhập vào số lượng" id="SO_LUONG" name="SO_LUONG">
             </div>
-            <!-- <div class="form-group">
-                <label for="">Giá nhập</label>
-                <input type="number" class="form-control" id="" placeholder="Nhập vào giá nhập" id="GIA_NHAP" name="GIA_NHAP">
-            </div> -->
+            <div class="form-group">
+                <label for="">Khuyến mại</label>
+                <input type="number" class="form-control" id="" placeholder="Nhập vào % khuyến mại 0-100%" id="khuyen_mai" name="khuyen_mai">
+            </div>
             <div class="form-group">
                 <label for="">Giá bán</label>
                 <input type="number" class="form-control" id="" placeholder="Nhập vào giá bán" id="GIA_BAN" name="GIA_BAN">

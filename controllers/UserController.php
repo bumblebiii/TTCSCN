@@ -114,9 +114,9 @@
 		        
 			}
 
-			$data2 = $product_model->All();
+			// $data2 = $product_model->All();
 
-			$json = json_encode($data2);
+			// $json = json_encode($data2);
 
 			// return response()->json($json);
 	        // $rate_product = $product_model->rate_product();
@@ -150,6 +150,7 @@
 
 			if (isset($_SESSION['cart'][$MA_SP])) {
 				$_SESSION['cart'][$MA_SP]['SO_LUONG']++;
+				setcookie('msg_add_success','Tăn số lượng thành công',time()+1);
 				header("Location: ?mod=index&act=cart");
 			}else{
 				$product_model = new Product();
@@ -159,7 +160,8 @@
 				$product['SO_LUONG'] = 1;
 
 				$_SESSION['cart'][$MA_SP] = $product;
-				header("Location: ?mod=index&act=product");
+				setcookie('msg_add_product','Tăn số lượng thành công',time()+1);
+				header("Location: ?mod=index&act=product&LSP=".$product['MA_LOAI_SP']."&NSX=".$product['MA_NSX']);
 			}
 			
 		}
@@ -172,6 +174,7 @@
 			}else{
 				unset($_SESSION['cart'][$MA_SP]);
 			}
+			setcookie('msg_sub_success','Giảm số lượng thành công!!',time()+1);
 			header("Location: ?mod=index&act=cart");
 		}
 
@@ -180,6 +183,8 @@
 			$MA_SP = $_GET['MA_SP'];
 
 			unset($_SESSION['cart'][$MA_SP]);
+
+			setcookie('msg_delete_product','Xóa sản phẩm khỏi giỏ hàng thành công',time()+1);
 
 			header("Location: ?mod=index&act=cart");
 		}
@@ -254,6 +259,8 @@
 				unset($data);
 
 		}
+
+		setcookie('msg_checkout','Xác nhận mua hàng thành công',time()+1);
 		header("Location:?");
 	}
 }
