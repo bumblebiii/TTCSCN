@@ -51,7 +51,7 @@
 				$product = $productModel->find($MA_SP);
 
 				$product['SO_LUONG'] = 1;
-
+ 
 				$_SESSION['cart'][$MA_SP] = $product;
 			}
 			setcookie('msg_cart_success','Thêm vào giỏ hàng thành công !',time()+1);

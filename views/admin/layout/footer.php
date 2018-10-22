@@ -61,6 +61,37 @@
 
     <!-- Custom scripts for all pages-->
     <script src="public/admin/js/sb-admin.js"></script>
+    <script type="text/javascript" src="public/user/vendor/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $('.btn-danger').click(function(e){
+          e.preventDefault();
+          var url = $(this).attr('href');
+          // alert(url);
+          swal({
+            title: "Bạn có chắc chắn muốn xóa không?",
+            text: "",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              window.location.href = url;
+              swal("Xóa thành công !!", {
+                icon: "success",
+              });
+            } else {
+              swal("Cảm ơn !!");
+            }
+        });
+      });
+
+      </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <?php 
+      include 'views/admin/layout/toastr.php';
+    ?>
 
     <!-- Demo scripts for this page-->
     <script src="public/admin/js/demo/datatables-demo.js"></script>

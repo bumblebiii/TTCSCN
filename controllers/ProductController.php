@@ -47,7 +47,7 @@
 
 			    if ($status==1) {
 			    	header("Location: index.php?mod=admin&act=product");
-			    	setcookie('msg_add','Thêm mới thành công !!!',time()+1);
+			    	setcookie('msg_add_success','Thêm mới thành công !!!',time()+1);
 			    }else{
 			    	setcookie('msg_fail','Thêm mới thất bại !!!',time()+1);
 			    }
